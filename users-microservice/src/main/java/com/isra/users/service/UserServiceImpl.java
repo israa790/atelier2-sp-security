@@ -11,8 +11,7 @@ import com.isra.users.entities.User;
 import com.isra.users.repos.RoleRepository;
 import com.isra.users.repos.UserRepository;
 
-@Transactional // toutes les méthodes de la classe seront automatiquement enregistrer lorsque
-				// je modifier les objets
+@Transactional // toutes les méthodes de la classe seront automatiquement enregistrer lorsque je modifier les objets
 @Service
 public class UserServiceImpl implements UserService {
 	@Autowired
@@ -20,6 +19,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	RoleRepository roleRep;
+	
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -48,8 +48,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<User> findAllUsers() {
-	
+	public List<User> findAll() {
 		return userRep.findAll();
 	}
 }
